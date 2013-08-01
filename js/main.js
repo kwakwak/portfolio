@@ -11,21 +11,25 @@ $(document).ready(function(){
 		$('body').css('background-image','url(pictures/'+name +')')
 	};
 
+	var pageMax = 2;
+	var imgNum = 20;
+
 	var x = 0;
-	var max = 5;
-	$('li').slice(max).hide();
+	var y = pageMax;
+
+	$('li').slice(pageMax).hide();
 
 
 	changeBG($('li').find(":visible").first().attr('src'));
 
 	function next(){
-		if (x!=5) {
+		if (x!=imgNum-pageMax) {
 			$('li').eq(x).hide();
 			x++;
 		} ;	
-		if (max!=10) {
-			$('li').eq(max).show();
-			max++;
+		if (y!=imgNum) {
+			$('li').eq(y).show();
+			y++;
 		} ;
 	changeBG($('li').find(":visible").first().attr('src'));
 	};
@@ -33,9 +37,9 @@ $(document).ready(function(){
 	
 
 	function perv(){
-		if (max!=5) {
-			$('li').eq(max-1).hide();
-			max--;
+		if (y!=pageMax) {
+			$('li').eq(y-1).hide();
+			y--;
 		} ;	
 		if (x!=0) {
 			$('li').eq(x-1).show();
