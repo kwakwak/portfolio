@@ -1,0 +1,30 @@
+body 
+{
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center; 
+	background-color:black; 
+}
+
+img
+{
+	border-style:solid;
+}
+
+ul
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+
+   position:absolute;
+   bottom:0;
+}
+li
+{
+	display:inline;
+}
+.hidden
+{
+	display: none;
+}
