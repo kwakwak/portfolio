@@ -17,35 +17,35 @@ $(document).ready(function(){
 	var x = 0;
 	var y = pageMax;
 
-	$('li').slice(pageMax).hide();
+	$('img').slice(pageMax).hide();
 
 
-	changeBG($('li').find(":visible").first().attr('src'));
+	changeBG($('div').find("img:visible").first().attr('src'));
 
 	function next(){
 		if (x!=imgNum-pageMax) {
-			$('li').eq(x).hide();
+			$("div").find("img").eq(x).hide();
 			x++;
 		} ;	
 		if (y!=imgNum) {
-			$('li').eq(y).show();
+			$("div").find("img").eq(y).show();
 			y++;
 		} ;
-	changeBG($('li').find(":visible").first().attr('src'));
+	changeBG($('div').find("img:visible").first().attr('src'));
 	};
 
 	
 
 	function perv(){
 		if (y!=pageMax) {
-			$('li').eq(y-1).hide();
+			$("div").find("img").eq(y-1).hide();
 			y--;
 		} ;	
 		if (x!=0) {
-			$('li').eq(x-1).show();
+			$("div").find("img").eq(x-1).show();
 			x--;
 		} ;	
-	changeBG($('li').find(":visible").first().attr('src'));
+	changeBG($('div').find("img:visible").first().attr('src'));
 	};
 
 // Bind functions:
