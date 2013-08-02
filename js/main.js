@@ -11,7 +11,7 @@ $(document).ready(function(){
 		$('body').css('background-image','url(pictures/'+name +')')
 	};
 
-	var pageMax = 2;
+	var pageMax = 5;
 	var imgNum = 20;
 
 	var x = 0;
@@ -31,7 +31,10 @@ $(document).ready(function(){
 			$("div").find("img").eq(y).show();
 			y++;
 		} ;
-	changeBG($('div').find("img:visible").first().attr('src'));
+
+	$("div").find("img").css("border-width","medium");
+	$("div").find("img").eq(x+2).css("border-width","15px");
+    changeBG($("div").find("img").eq(x+2).attr('src'));
 	};
 
 	
@@ -45,7 +48,11 @@ $(document).ready(function(){
 			$("div").find("img").eq(x-1).show();
 			x--;
 		} ;	
-	changeBG($('div').find("img:visible").first().attr('src'));
+
+	$("div").find("img").css("border-width","medium");
+	$("div").find("img").eq(x+2).css("border-width","15px");
+    changeBG($("div").find("img").eq(x+2).attr('src'));
+
 	};
 
 // Bind functions:
