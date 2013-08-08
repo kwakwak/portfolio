@@ -1,9 +1,5 @@
 $(document).ready(function(){
-	$('img').on('mouseover',function(){
 
-		var name = $(this).attr('src');
-    	changeBG(name);
-	});
 
 	function changeBG(name){
 		var parts = name.split('/');
@@ -19,22 +15,32 @@ $(document).ready(function(){
 
 	$('img').slice(pageMax).hide();
 
+	function tumborder(imgBorder){
 
-	changeBG($('div').find("img:visible").first().attr('src'));
+
+		$("div").find("img").css("border-width","medium");
+		$("div").find("img").eq(imgBorder).css("border-width","15px");
+	    changeBG($("div").find("img").eq(imgBorder).attr('src'));
+	} ;
+
+	tumborder(x+2);
 
 	function next(){
-		if (x!=imgNum-pageMax) {
+		if (x<imgNum-pageMax) {
 			$("div").find("img").eq(x).hide();
 			x++;
-		} ;	
+			tumborder(x+2);
+		} else if (x!=imgNum-3)  {
+		x++;
+		tumborder(x+2);	
+
+		}
 		if (y!=imgNum) {
 			$("div").find("img").eq(y).show();
 			y++;
 		} ;
 
-	$("div").find("img").css("border-width","medium");
-	$("div").find("img").eq(x+2).css("border-width","15px");
-    changeBG($("div").find("img").eq(x+2).attr('src'));
+		
 	};
 
 	
@@ -49,9 +55,7 @@ $(document).ready(function(){
 			x--;
 		} ;	
 
-	$("div").find("img").css("border-width","medium");
-	$("div").find("img").eq(x+2).css("border-width","15px");
-    changeBG($("div").find("img").eq(x+2).attr('src'));
+	tumborder(x+2);
 
 	};
 
