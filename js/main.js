@@ -27,7 +27,7 @@ $(document).ready(function(){
 	tumborder(x+2);
 
 	function next(){
-		if (x!=imgNum-pageMax & y!=imgNum) {
+		if (x!=imgNum-pageMax && z>=2) {
 			$("div").find("img").eq(x).hide();
 			x++;
 			$("div").find("img").eq(y).show();
@@ -42,12 +42,12 @@ $(document).ready(function(){
 	};
 
 	function perv(){
-		if (y!=pageMax & x!=0 & z!=2) {
+		if (y!=pageMax && z<=2) {
 				$("div").find("img").eq(y-1).hide();
 				y--;	
 				$("div").find("img").eq(x-1).show();
 				x--;
-			
+
 		tumborder(x+z);
 	
 		} else if (x+z!=0) {
