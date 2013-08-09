@@ -12,6 +12,7 @@ $(document).ready(function(){
 
 	var x = 0;
 	var y = pageMax;
+	var z = 2;
 
 	$('img').slice(pageMax).hide();
 
@@ -26,37 +27,33 @@ $(document).ready(function(){
 	tumborder(x+2);
 
 	function next(){
-		if (x<imgNum-pageMax) {
+		if (x!=imgNum-pageMax & y!=imgNum) {
 			$("div").find("img").eq(x).hide();
 			x++;
-			tumborder(x+2);
-		} else if (x!=imgNum-3)  {
-		x++;
-		tumborder(x+2);	
-
-		}
-		if (y!=imgNum) {
 			$("div").find("img").eq(y).show();
 			y++;
-		} ;
+			tumborder(x+z);
+		} else if (x+z!=imgNum-1) {
+			z++;
+			tumborder(x+z);
+		};
 
 		
 	};
 
-	
-
 	function perv(){
-		if (y!=pageMax) {
-			$("div").find("img").eq(y-1).hide();
-			y--;
-		} ;	
-		if (x!=0) {
-			$("div").find("img").eq(x-1).show();
-			x--;
-		} ;	
-
-	tumborder(x+2);
-
+		if (y!=pageMax & x!=0 & z!=2) {
+				$("div").find("img").eq(y-1).hide();
+				y--;	
+				$("div").find("img").eq(x-1).show();
+				x--;
+			
+		tumborder(x+z);
+	
+		} else if (x+z!=0) {
+				z--;
+				tumborder(x+z);
+		};
 	};
 
 // Bind functions:
