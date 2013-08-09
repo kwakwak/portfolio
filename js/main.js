@@ -12,7 +12,8 @@ $(document).ready(function(){
 
 	var x = 0;
 	var y = pageMax;
-	var z = 2;
+	var z = Math.floor(pageMax/2);
+	var centerImg = z;
 
 	$('img').slice(pageMax).hide();
 
@@ -24,10 +25,10 @@ $(document).ready(function(){
 	    changeBG($("div").find("img").eq(imgBorder).attr('src'));
 	} ;
 
-	tumborder(x+2);
+	tumborder(x+centerImg);
 
 	function next(){
-		if (x!=imgNum-pageMax && z>=2) {
+		if (x!=imgNum-pageMax && z>=centerImg) {
 			$("div").find("img").eq(x).hide();
 			x++;
 			$("div").find("img").eq(y).show();
@@ -42,7 +43,7 @@ $(document).ready(function(){
 	};
 
 	function perv(){
-		if (y!=pageMax && z<=2) {
+		if (y!=pageMax && z<=centerImg) {
 				$("div").find("img").eq(y-1).hide();
 				y--;	
 				$("div").find("img").eq(x-1).show();
