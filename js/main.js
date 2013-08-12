@@ -4,7 +4,7 @@ $(document).ready(function(){
 	function changeBG(name){
 		var parts = name.split('/');
     	name = parts[parts.length-1];
-		$('body').css('background-image','url(pictures/'+name +')')
+		$("#mainImg").attr('src','pictures/'+name)
 	};
 
 	var pageMax = 5;
@@ -15,23 +15,23 @@ $(document).ready(function(){
 	var z = Math.floor(pageMax/2);
 	var centerImg = z;
 
-	$('img').slice(pageMax).hide();
+	$('.tumb').slice(pageMax).hide();
 
 	function tumborder(imgBorder){
 
 
-		$("div").find("img").css("border-width","medium");
-		$("div").find("img").eq(imgBorder).css("border-width","15px");
-	    changeBG($("div").find("img").eq(imgBorder).attr('src'));
+		$("#tumb-imgs").find("img").removeClass("selectedTumb");
+		$("#tumb-imgs").find("img").eq(imgBorder).addClass("selectedTumb");
+	    changeBG($("#tumb-imgs").find("img").eq(imgBorder).attr('src'));
 	} ;
 
 	tumborder(x+centerImg);
 
 	function next(){
 		if (x!=imgNum-pageMax && z>=centerImg) {
-			$("div").find("img").eq(x).hide();
+			$("#tumb-imgs").find("img").eq(x).hide();
 			x++;
-			$("div").find("img").eq(y).show();
+			$("#tumb-imgs").find("img").eq(y).show();
 			y++;
 			tumborder(x+z);
 		} else if (x+z!=imgNum-1) {
@@ -44,9 +44,9 @@ $(document).ready(function(){
 
 	function perv(){
 		if (y!=pageMax && z<=centerImg) {
-				$("div").find("img").eq(y-1).hide();
+				$("#tumb-imgs").find("img").eq(y-1).hide();
 				y--;	
-				$("div").find("img").eq(x-1).show();
+				$("#tumb-imgs").find("img").eq(x-1).show();
 				x--;
 
 		tumborder(x+z);

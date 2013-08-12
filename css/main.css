@@ -1,13 +1,7 @@
-body 
+#main, #tumb-imgs
 {
-	background-repeat:no-repeat;
-	background-attachment:fixed;
-	background-position:center; 
-	background-color:black; 
-	  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	text-align: center;
+
 }
 
 img
@@ -15,12 +9,19 @@ img
 	border-style:solid;
 }
 
-div
+body
 {
-text-align: center;
-position: absolute;
-bottom: 0px;
-width: 100%;
-background-color: black;
+	background-color: #3E4E13;
 }
+
+img.selectedTumb
+{
+opacity:0.9;
+}
+.tumb
+{
+opacity:0.2;
+}
+
+
 
