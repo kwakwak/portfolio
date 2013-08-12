@@ -1,27 +1,44 @@
-#main, #tumb-imgs
-{
+#main, #tumb-imgs{
 	text-align: center;
+}
+#tumb-imgs{
+	background-color: black;
+	padding-top: 5px;
 
 }
 
-img
-{
-	border-style:solid;
-}
-
-body
-{
+body{
 	background-color: #3E4E13;
 }
 
-img.selectedTumb
-{
-opacity:0.9;
+img.selectedTumb{
+opacity:1;
 }
-.tumb
-{
+.tumb{
 opacity:0.2;
+border-style:solid;
+
 }
 
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
 
+a:link {color:#007536;}      /* unvisited link */
+a:visited {color:#007536;}  /* visited link */
+a:hover {color:#007536;}  /* mouse over link */
+a:active {color:#007536;}  /* selected link */
+
+a.prev , a.next {
+font-size: large;
+
+}
+div#container{
+	background-color: black;
+	width: 1366px;
+	margin: auto;
+
+	border-style:solid;
+}
 

@@ -42,7 +42,7 @@ $(document).ready(function(){
 		
 	};
 
-	function perv(){
+	function prev(){
 		if (y!=pageMax && z<=centerImg) {
 				$("#tumb-imgs").find("img").eq(y-1).hide();
 				y--;	
@@ -59,12 +59,15 @@ $(document).ready(function(){
 
 // Bind functions:
 
-	$('#perv').on('click',perv);
-	$('#next').on('click',next);
+
+	$('a.prev').on('click',prev);
+	$('a.next').on('click',next);
+
+	$('#mainImg').on('click',next);
 
 	$('body').keydown(function(e) {
 	  if(e.keyCode == 37) { // left
-		perv();
+		prev();
 	  }
 	  else if(e.keyCode == 39) { // right
 		next();
