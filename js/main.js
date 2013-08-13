@@ -20,18 +20,18 @@ $(document).ready(function(){
 	function tumborder(imgBorder){
 
 
-		$("#tumb-imgs").find("img").removeClass("selectedTumb");
-		$("#tumb-imgs").find("img").eq(imgBorder).addClass("selectedTumb");
-	    changeBG($("#tumb-imgs").find("img").eq(imgBorder).attr('src'));
+		$("div.tumb-imgs").find("img").removeClass("selectedTumb");
+		$("div.tumb-imgs").find("img").eq(imgBorder).addClass("selectedTumb");
+	    changeBG($("div.tumb-imgs").find("img").eq(imgBorder).attr('src'));
 	} ;
 
 	tumborder(x+centerImg);
 
 	function next(){
 		if (x!=imgNum-pageMax && z>=centerImg) {
-			$("#tumb-imgs").find("img").eq(x).hide();
+			$("div.tumb-imgs").find("img").eq(x).hide();
 			x++;
-			$("#tumb-imgs").find("img").eq(y).show();
+			$("div.tumb-imgs").find("img").eq(y).show();
 			y++;
 			tumborder(x+z);
 		} else if (x+z!=imgNum-1) {
@@ -39,17 +39,19 @@ $(document).ready(function(){
 			tumborder(x+z);
 		};
 
-		
+
 	};
 
 	function prev(){
 		if (y!=pageMax && z<=centerImg) {
-				$("#tumb-imgs").find("img").eq(y-1).hide();
+				$("div.tumb-imgs").find("img").eq(y-1).hide();
 				y--;	
-				$("#tumb-imgs").find("img").eq(x-1).show();
+				$("div.tumb-imgs").find("img").eq(x-1).show();
 				x--;
 
 		tumborder(x+z);
+
+
 	
 		} else if (x+z!=0) {
 				z--;
@@ -57,13 +59,25 @@ $(document).ready(function(){
 		};
 	};
 
+
+	$('a.prev').mouseover(function() {
+	  $(this).css('background-image', 'url("img/prev.png")');;
+	});
+	$('a.prev').mouseout(function() {
+	  $(this).css('background-image', 'none');;
+	});
+
+	$('a.next').mouseover(function() {
+	  $(this).css('background-image', 'url("img/next.png")');;
+	});
+	$('a.next').mouseout(function() {
+	  $(this).css('background-image', 'none');;
+	});
 // Bind functions:
 
 
 	$('a.prev').on('click',prev);
 	$('a.next').on('click',next);
-
-	$('#mainImg').on('click',next);
 
 	$('body').keydown(function(e) {
 	  if(e.keyCode == 37) { // left

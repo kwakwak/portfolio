@@ -1,10 +1,9 @@
-#main, #tumb-imgs{
-	text-align: center;
-}
-#tumb-imgs{
+
+.tumb-imgs{
 	background-color: black;
 	padding-top: 5px;
-
+	text-align: center;
+		position: relative;
 }
 
 body{
@@ -34,11 +33,52 @@ a.prev , a.next {
 font-size: large;
 
 }
-div#container{
+.container{
 	background-color: black;
 	width: 1366px;
 	margin: auto;
 
 	border-style:solid;
+}
+
+a.next , a.prev {
+	height: 100%;
+	width: 50%;
+	background-repeat:no-repeat;
+
+}
+a.next{
+	float: right;
+	right: 0;
+	background-position:right center; 
+}
+a.prev{
+	float: left;
+	left: 0;
+	background-position:left center; 
+}
+.main{
+	width: 1366px;
+	height: 768px;
+	text-align: center;
+	position: relative;
+}
+.img{
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.nav{
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+
+
+}
+img.prev , img.next {
+
+
 }
 
