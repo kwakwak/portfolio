@@ -59,20 +59,31 @@ $(document).ready(function(){
 		};
 	};
 
+// Show arrows on main picture
 
 	$('a.prev').mouseover(function() {
-	  $(this).css('background-image', 'url("img/prev.png")');;
+		var image=$(this);
+		image.fadeOut(200, function () {
+	        image.css('background-image', 'url("img/prev.png")');
+	        image.fadeIn(200);
+ 	 	});
 	});
-	$('a.prev').mouseout(function() {
-	  $(this).css('background-image', 'none');;
+	$('a.next').mouseover(function() {
+		var image=$(this);
+		image.fadeOut(200, function () {
+	        image.css('background-image', 'url("img/next.png")');
+	        image.fadeIn(200);
+ 	 	});
 	});
 
-	$('a.next').mouseover(function() {
-	  $(this).css('background-image', 'url("img/next.png")');;
+
+	$('a.prev').mouseout(function() {
+	  $(this).css('background-image', 'none');
 	});
 	$('a.next').mouseout(function() {
-	  $(this).css('background-image', 'none');;
+	  $(this).css('background-image', 'none');
 	});
+
 // Bind functions:
 
 
