@@ -56,18 +56,10 @@ $(document).ready(function(){
 // Show arrows on main picture
 
 	$('a.prev').mouseover(function() {
-		var image=$(this);
-		image.fadeOut(200, function () {
-	        image.css('background-image', 'url("img/prev.png")');
-	        image.fadeIn(200);
- 	 	});
+		$(this).css('background-image', 'url("img/prev.png")');
 	});
 	$('a.next').mouseover(function() {
-		var image=$(this);
-		image.fadeOut(200, function () {
-	        image.css('background-image', 'url("img/next.png")');
-	        image.fadeIn(200);
- 	 	});
+		$(this).css('background-image', 'url("img/next.png")');
 	});
 
 	$('a.prev').mouseout(function() {
@@ -100,5 +92,15 @@ $(document).ready(function(){
             next();
         }
     });
+// End of bind functions.
+
+$('a.animals').on('click',function(){
+	$('div.container').toggle();
+	$('div.overlay').toggle();
+});
+$('img.close').on('click',function(){
+	$('div.container').toggle();
+	$('div.overlay').toggle();
+});
 
 });
