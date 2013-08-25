@@ -23,11 +23,14 @@
 	margin: auto;
 	border-style:solid;
 	z-index: 2;
-	position: relative;
+	position: fixed;
 	display: none;
+	top: 50px;
+	left: 50%;
+	margin-left: -683px;
 }
 
-.tumb-imgs{
+.tumb-imgs , .titles{
 	background-color: black;
 	padding-top: 5px;
 	text-align: center;
@@ -44,8 +47,12 @@ opacity:1;
 .tumb{
 opacity:0.2;
 border-style:solid;
-
 }
+.title{
+opacity:0.5;
+border-style:solid;
+}
+
 
 
 a.prev , a.next {
@@ -80,6 +87,7 @@ a.prev{
 	position: absolute;
 	top:0;
 	left: 0;
+	background: url('loading.gif') no-repeat;
 }
 .nav{
 	position: absolute;

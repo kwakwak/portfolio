@@ -114,7 +114,7 @@ $(document).ready(function(){
 
 
 
-	$('a.animals1').on('click',function(){
+	$('img.animals1').on('click',function(){
 		
 		if ($('input').val() != 'animals1') {
 			$('div.tumb-imgs').load('animals1.html', function() {
@@ -125,7 +125,7 @@ $(document).ready(function(){
 		$('div.overlay').toggle();
 	});
 
-	$('a.animals2').on('click',function(){
+	$('img.animals2').on('click',function(){
 		
 		if ($('input').val() != 'animals2') {
 			$('div.tumb-imgs').load('animals2.html', function() {
@@ -134,6 +134,11 @@ $(document).ready(function(){
 		};
 		$('div.container').toggle();
 		$('div.overlay').toggle();
+	});
+
+		$('img.title').mouseover(function() {
+		$("div.titles").find("img").removeClass("selectedTumb");
+		$(this).addClass("selectedTumb");
 	});
 
 });
