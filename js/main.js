@@ -21,6 +21,13 @@ $(document).ready(function(){
 		
 		tumborder(window.x+centerImg);
 		$('.tumb').slice(pageMax).hide();
+
+		$('.tumb').on('mouseover',function(){
+			tumborder($(this).index()-2);
+		});
+		$('.tumb').on('mouseout',function(){
+			tumborder(window.x+window.z);
+		});
 	};
 
 // change main picture
@@ -125,6 +132,7 @@ $(document).ready(function(){
 		if ($('input').val() != 'animals1') {
 			$('div.tumb-imgs').load('animals1.html', function() {
 				start();
+
 			});
 		};
 		$('div.container').fadeToggle();
@@ -151,4 +159,6 @@ $(document).ready(function(){
 		$("div.titles").find("span").hide();
 		
 	});
+
+
 });
