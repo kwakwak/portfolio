@@ -1,7 +1,8 @@
 .close{
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	right: 0;
+	margin: 10px;
 	z-index: 103;
 	cursor: pointer;
 }

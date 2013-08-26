@@ -14,8 +14,8 @@ $(document).ready(function(){
 
 		window.x = 0 ; 
 		window.y = pageMax;
-//		window.z = Math.floor(pageMax/2); 
-		window.z = 0 ;
+		window.z = Math.floor(pageMax/2); 
+
 		window.centerImg = z;
 
 		
@@ -27,7 +27,7 @@ $(document).ready(function(){
 	function changeBG(name){
 		var parts = name.split('/');
     	name = parts[parts.length-1];
-		$("#mainImg").attr('src','pictures/'+name)
+		$("#mainImg").attr('src','pictures/'+name);
 	};
 
 // highlight selected tumb img
@@ -110,8 +110,8 @@ $(document).ready(function(){
 
 
 	function close(){
-		$('div.container').toggle();
-		$('div.overlay').toggle();
+		$('div.container').fadeToggle("fast");
+		$('div.overlay').fadeToggle("fast");
 	}
 
 	$('img.close').on('click',function(){
@@ -120,26 +120,26 @@ $(document).ready(function(){
 
 
 
-	$('img.animals1').on('click',function(){
+	$('div.animals1').on('click',function(){
 		
 		if ($('input').val() != 'animals1') {
 			$('div.tumb-imgs').load('animals1.html', function() {
 				start();
 			});
 		};
-		$('div.container').toggle();
-		$('div.overlay').toggle();
+		$('div.container').fadeToggle();
+		$('div.overlay').fadeToggle();
 	});
 
-	$('img.animals2').on('click',function(){
+	$('div.animals2').on('click',function(){
 		
 		if ($('input').val() != 'animals2') {
 			$('div.tumb-imgs').load('animals2.html', function() {
 				start();
 			});
 		};
-		$('div.container').toggle();
-		$('div.overlay').toggle();
+		$('div.container').fadeToggle();
+		$('div.overlay').fadeToggle();
 	});
 
 	$('div.title').mouseover(function() {
