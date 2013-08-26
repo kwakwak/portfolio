@@ -93,6 +93,9 @@ $(document).ready(function(){
 	  else if(e.keyCode == 39) { // right
 		next();
 	  }
+	  else if(e.keyCode == 27) { // esc
+		close();
+	  }
 	});
 // Mousewheel:
 	$('body').bind('mousewheel', function(e){
@@ -106,10 +109,13 @@ $(document).ready(function(){
 // End of bind functions.
 
 
-
-	$('img.close').on('click',function(){
+	function close(){
 		$('div.container').toggle();
 		$('div.overlay').toggle();
+	}
+
+	$('img.close').on('click',function(){
+		close();
 	});
 
 
@@ -136,9 +142,13 @@ $(document).ready(function(){
 		$('div.overlay').toggle();
 	});
 
-		$('img.title').mouseover(function() {
-		$("div.titles").find("img").removeClass("selectedTumb");
-		$(this).addClass("selectedTumb");
+	$('div.title').mouseover(function() {
+		$("div.titles").find("span").hide();
+		$(this).find("span").show();
 	});
 
+	$('div.titles').mouseout(function() {
+		$("div.titles").find("span").hide();
+		
+	});
 });
