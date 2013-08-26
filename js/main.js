@@ -25,7 +25,7 @@ $(document).ready(function(){
 		$('.tumb').on('mouseover',function(){
 			tumborder($(this).index()-2);
 		});
-		$('.tumb').on('mouseout',function(){
+		$('.tumb-imgs').on('mouseleave',function(){
 			tumborder(window.x+window.z);
 		});
 	};
