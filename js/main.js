@@ -127,10 +127,10 @@ $(document).ready(function(){
 
 
 
-	$('div.animals1').on('click',function(){
-		
-		if ($('input').val() != 'animals1') {
-			$('div.tumb-imgs').load('animals1.html', function() {
+	$('div.title').on('click',function(){
+		name=$(this).data('name');
+		if ($('input').val() != name) {
+			$('div.tumb-imgs').load('sets/'+name+'.set', function() {
 				start();
 
 			});
@@ -139,16 +139,7 @@ $(document).ready(function(){
 		$('div.overlay').fadeToggle();
 	});
 
-	$('div.animals2').on('click',function(){
-		
-		if ($('input').val() != 'animals2') {
-			$('div.tumb-imgs').load('animals2.html', function() {
-				start();
-			});
-		};
-		$('div.container').fadeToggle();
-		$('div.overlay').fadeToggle();
-	});
+
 
 	$('div.title').mouseover(function() {
 		$("div.titles").find("span").hide();
