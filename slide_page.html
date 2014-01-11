@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tv Remote Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      html, body, .contain , .col-xs-4 , .col-xs-12  
+      {
+        height:100%; 
+        background-color: #841A02;
+      }
+      .siz100{height:100%;}
+      .size70{height:70px;}
+      .backcolor1{background-color: #841A02;}
+      .backcolor2{background-color: #B24214;}
+      .backcolor3{background-color: #DF6C3F;}
+      .backcolor4{background-color: #74564C;}
+      .col-xs-12 ,  .col-xs-4{
+        text-decoration: none;
+        font-size:50px;
+        color:white;
+        text-align: center;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+
+      .t2 ,.t3 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+
+      <div class="row size70" >
+        <div class="col-xs-4 backcolor2 c1" >
+          <div class="textdiv ">1</div>
+        </div>
+        <div class="col-xs-4 backcolor3 c2">
+          <div class="textdiv ">2</div>
+        </div>
+        <div class="col-xs-4 backcolor2 c3">
+          <div class="textdiv ">3</div>
+        </div>
+      </div>
+      <div class="row size100 " >
+        <div class="col-xs-12 backcolor1 ch10 click ">
+          <div class="textdiv t1">1</div>
+          <div class="textdiv t2">2</div>
+          <div class="textdiv t3">3</div>
+        </div>
+      </div>
+
+     
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+        var current = ".t1";
+
+        $(".c2").click(function(){
+          $(current).hide("slide", { direction: "right" }, 500 ,function(){
+            $(".t2").show("slide", { direction: "left" }, 500);
+          });
+          current =".t2";
+        });
+
+      $(".c1").click(function(){
+          $(current).hide("slide", { direction: "right" }, 500 ,function(){
+            $(".t1").show("slide", { direction: "left" }, 500);
+          });
+          current =".t1";
+        });
+
+      $(".c3").click(function(){
+          $(current).hide("slide", { direction: "right" }, 500 ,function(){
+            $(".t3").show("slide", { direction: "left" }, 500);
+          });
+          current =".t3";
+        });
+
+      });
+
+    </script>
+  </body>
+</html>
